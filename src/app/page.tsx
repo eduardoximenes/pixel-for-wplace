@@ -401,21 +401,21 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 dark:from-gray-900 dark:to-gray-800">
+    <div className="min-h-screen app-bg">
       <div className="container mx-auto px-4 py-8">
-        <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold text-gray-800 dark:text-white mb-2">
+        <div className="text-center mb-10">
+          <h1 className="text-5xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-emerald-500 via-teal-500 to-sky-500 mb-3">
             Pixel Art Generator for Wplace
           </h1>
-          <p className="text-gray-600 dark:text-gray-300">
+          <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
             Transform your images into pixel art with adjustable pixel sizes
           </p>
         </div>
 
         <div className="max-w-4xl mx-auto">
-          <div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg mb-8">
+          <div className="bg-white/70 dark:bg-white/5 backdrop-blur rounded-2xl p-6 shadow-xl ring-1 ring-black/5 dark:ring-white/10 mb-8">
             {selectedImageName && (
-              <div className="mb-4 p-3 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-200 dark:border-blue-800">
+              <div className="mb-4 p-3 bg-blue-50/70 dark:bg-blue-900/20 rounded-lg border border-blue-200/60 dark:border-blue-800/60">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2">
                     <svg
@@ -449,10 +449,10 @@ export default function Home() {
             )}
             {selectedImage ? null : (
               <div
-                className={` mb-8 border-2 border-dashed rounded-lg p-12 text-center transition-colors ${
+                className={` mb-8 border-2 border-dashed rounded-2xl p-12 text-center transition-all ${
                   dragActive
-                    ? "border-blue-500 bg-blue-50 dark:bg-blue-900/20"
-                    : "border-gray-300 dark:border-gray-600 hover:border-gray-400 dark:hover:border-gray-500"
+                    ? "border-emerald-400 bg-emerald-50/70 dark:bg-emerald-900/20"
+                    : "border-gray-300/60 dark:border-gray-600/60 hover:border-sky-400 dark:hover:border-sky-500"
                 }`}
                 onDragEnter={handleDrag}
                 onDragLeave={handleDrag}
@@ -478,7 +478,7 @@ export default function Home() {
                     </p>
                     <button
                       onClick={() => fileInputRef.current?.click()}
-                      className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded-lg transition-colors"
+                      className="bg-gradient-to-r from-emerald-500 to-sky-600 hover:from-emerald-600 hover:to-sky-700 text-white px-6 py-2 rounded-lg shadow-lg shadow-emerald-500/20 transition-colors"
                     >
                       Choose Image
                     </button>
@@ -509,7 +509,7 @@ export default function Home() {
                     max="50"
                     value={pixelSize}
                     onChange={(e) => setPixelSize(Number(e.target.value))}
-                    className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"
+                    className="w-full h-2 bg-gray-200/60 rounded-lg appearance-none cursor-pointer dark:bg-gray-700/60 accent-emerald-500"
                   />
                 </div>
 
@@ -524,14 +524,14 @@ export default function Home() {
                   <button
                     onClick={pixelateImage}
                     disabled={isProcessing}
-                    className="flex-1 bg-blue-500 hover:bg-blue-600 disabled:bg-blue-300 text-white py-2 px-4 rounded-lg transition-colors"
+                    className="flex-1 bg-gradient-to-r from-emerald-500 to-sky-600 hover:from-emerald-600 hover:to-sky-700 disabled:from-emerald-300 disabled:to-sky-300 text-white py-2 px-4 rounded-lg shadow-lg shadow-emerald-500/20 transition-colors"
                   >
                     {isProcessing ? "Processing..." : "Generate Pixel Art"}
                   </button>
 
                   <button
                     onClick={resetImage}
-                    className="bg-gray-500 hover:bg-gray-600 text-white py-2 px-4 rounded-lg transition-colors"
+                    className="bg-gray-600/90 hover:bg-gray-700 text-white py-2 px-4 rounded-lg transition-colors"
                   >
                     Reset
                   </button>
@@ -541,7 +541,7 @@ export default function Home() {
                   <div className="space-y-3">
                     <button
                       onClick={downloadImage}
-                      className="w-full bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded-lg transition-colors"
+                      className="w-full bg-emerald-500 hover:bg-emerald-600 text-white py-2 px-4 rounded-lg shadow-lg shadow-emerald-500/20 transition-colors"
                     >
                       Download Pixel Art
                     </button>
@@ -549,7 +549,7 @@ export default function Home() {
                     <div className="space-y-2">
                       <button
                         onClick={openPiP}
-                        className="w-full bg-purple-500 hover:bg-purple-600 text-white py-2 px-4 rounded-lg transition-colors flex items-center justify-center gap-2"
+                        className="w-full bg-sky-500 hover:bg-sky-600 text-white py-2 px-4 rounded-lg shadow-lg shadow-sky-500/20 transition-colors flex items-center justify-center gap-2"
                       >
                         <svg
                           className="w-4 h-4"
@@ -577,7 +577,7 @@ export default function Home() {
           {selectedImage && (
             <div className="grid lg:grid-cols-2 gap-8">
               <div className="space-y-6">
-                <div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg">
+                <div className="bg-white/70 dark:bg-white/5 backdrop-blur rounded-2xl p-6 shadow-xl ring-1 ring-black/5 dark:ring-white/10">
                   <h3 className="text-lg font-semibold mb-4 text-gray-800 dark:text-white">
                     Original Image
                   </h3>
@@ -593,7 +593,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg">
+              <div className="bg-white/70 dark:bg-white/5 backdrop-blur rounded-2xl p-6 shadow-xl ring-1 ring-black/5 dark:ring-white/10">
                 <h3 className="text-lg font-semibold mb-4 text-gray-800 dark:text-white">
                   Pixelated Result
                 </h3>
@@ -631,7 +631,7 @@ export default function Home() {
           )}
 
           {conversionInfo && (
-            <div className="mt-8 bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg">
+            <div className="mt-8 bg-white/70 dark:bg-white/5 backdrop-blur rounded-2xl p-6 shadow-xl ring-1 ring-black/5 dark:ring-white/10">
               <h3 className="text-lg font-semibold mb-4 text-gray-800 dark:text-white flex items-center gap-2">
                 <svg
                   className="w-5 h-5 text-blue-500"
@@ -705,7 +705,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
+              <div className="mt-4 pt-4 border-t border-gray-200/60 dark:border-white/10">
                 <div className="flex justify-between items-center">
                   <span className="text-sm text-gray-600 dark:text-gray-400">
                     Compression Ratio:
@@ -732,7 +732,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
+              <div className="mt-4 pt-4 border-t border-gray-200/60 dark:border-white/10">
                 <h4 className="font-medium text-gray-700 dark:text-gray-300 mb-3 flex items-center gap-2">
                   <span>
                     Colors Used ({conversionInfo.usedColors.length} different
@@ -744,7 +744,7 @@ export default function Home() {
                   {conversionInfo.usedColors.map((color, index) => (
                     <div
                       key={index}
-                      className="flex items-center gap-3 p-2 bg-gray-50 dark:bg-gray-700 rounded-lg"
+                      className="flex items-center gap-3 p-2 bg-gray-50/70 dark:bg-gray-700/60 rounded-lg"
                     >
                       <div
                         className="w-8 h-8 rounded border-2 border-gray-300 dark:border-gray-600 flex-shrink-0"
@@ -771,7 +771,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="mt-4 p-3 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-200 dark:border-blue-800">
+              <div className="mt-4 p-3 bg-blue-50/70 dark:bg-blue-900/20 rounded-lg border border-blue-200/60 dark:border-blue-800/60">
                 <div className="text-sm text-blue-800 dark:text-blue-200">
                   <div className="font-medium mb-1">
                     Area Selection Tips:

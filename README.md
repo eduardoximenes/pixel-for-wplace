@@ -2,20 +2,6 @@
 
 Convert images into Wplace-compatible pixel art in the browser. Drag & drop an image, choose pixel size, map to the Wplace palette, preview color usage and grid metrics, open a Picture‑in‑Picture reference, and download the result as PNG.
 
-### Features
-- Adjustable pixel size (2–50 px) to balance detail vs. effort
-- Quantization to the Wplace color palette
-- Metrics: grid size, pixels to paint, compression ratio
-- Color usage panel sorted by frequency
-- Hover inspector with color name and RGB
-- Picture‑in‑Picture floating reference window
-- Export pixelated result as PNG
-
-### Tech Stack
-- Next.js (App Router) + TypeScript
-- Tailwind CSS
-- HTML Canvas for image processing
-
 ### Getting Started
 1. Install dependencies:
 ```bash
@@ -38,7 +24,17 @@ npm run dev
 - Global styles/theme in `src/app/globals.css`
 - Wplace palette in `wplace-colors.json`
 
-### Notes
-- Do not commit `node_modules/`. Ensure `.gitignore` excludes it
-- For deployment, Vercel works out of the box with Next.js
+### Features
+- Adjustable pixel size (2–50 px) to balance detail vs. effort
+- Quantization to the Wplace color palette
+- Metrics: grid size, pixels to paint, compression ratio
+- Color usage panel sorted by frequency
+- Hover inspector with color name and RGB
+- Picture‑in‑Picture floating reference window
+- Export pixelated result as PNG
+
+### Tech Stack
+- Next.js (App Router) + TypeScript
+- Tailwind CSS
+- HTML Canvas for image processing
 
