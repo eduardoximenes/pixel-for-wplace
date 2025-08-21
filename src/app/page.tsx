@@ -144,6 +144,7 @@ export default function Home() {
 
       return matchingColor || null;
     } catch (error) {
+      console.error("Error getting color at position:", error);
       return null;
     }
   };
@@ -786,8 +787,8 @@ export default function Home() {
                       needed for your area
                     </li>
                     <li>
-                      • You'll need {conversionInfo.usedColors.length} different
-                      colors from the palette above
+                      • You&apos;ll need {conversionInfo.usedColors.length}{" "}
+                      different colors from the palette above
                     </li>
                     <li>
                       • Smaller pixel sizes create more detail but require more
